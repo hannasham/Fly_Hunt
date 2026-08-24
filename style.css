@@ -1,0 +1,105 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: #f0f0f0;
+  cursor: url('img/swatter.png'), auto;
+  gap: 20px;
+}
+
+.cell {
+  background-size: 50%;
+  aspect-ratio: 1 / 1.5;
+  background-color: rgb(169, 227, 246);
+  border: .2px solid #95b6ff;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-color 0.2s ease;
+
+}
+
+.window {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  width: 400px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+
+}
+
+.counter_text,
+.timer_text {
+  padding: 20px;
+  color: rgb(8, 47, 54);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.number_highlight {
+  color: rgb(247, 142, 142);
+  font-weight: bold;
+}
+
+.cell.fly:active {
+  background-color: rgb(247, 142, 142);
+}
+
+.fly {
+  background-image: url('img/fly.svg');
+}
+
+.cat {
+  background-image: url('img/cat.svg');
+  background-position: center bottom;
+}
+
+
+.cell.cat:active {
+  background-color: rgb(124, 124, 124);
+
+}
+
+.cell.dead {
+  background-image: url('img/dead_fly.svg');
+}
+
+/* .cell.hit {
+  background-color: black;
+} */
+
+.startBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  border-radius: 20px;
+  border: 1px solid #95b6ff;
+}
+
+.startBtn:active {
+  background-color: rgb(254, 181, 181);
+}
+
+.startBtn:hover {
+  background-color: rgb(169, 227, 246);
+}
+
+.startBtn:focus {
+  outline: none;
+}
+
+.startBtn:disabled {
+  background-color: rgb(200, 200, 200);
+  cursor: not-allowed;
+}
+
+.game_over {
+  font-size: 30px;
+  color: rgb(247, 142, 142);
+}
