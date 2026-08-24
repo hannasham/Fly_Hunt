@@ -1,7 +1,7 @@
 const gameState = {
   counterFlyKilled: 0,
   isRunning: false,
-  showTime: 1000,
+  showTime: 1200,
   timerTime: 20,
 }
 
@@ -97,7 +97,7 @@ function newAimal() {
     setTimeout(() => {
       let cellActive = cellArray[getRandomNumber(0, cellCount)]
 
-      if (getRandomNumber(0, 10) > 3) {
+      if (getRandomNumber(0, 10) >= 3) {
         cellActive.classList.add("fly")
       }
       else {
@@ -107,7 +107,7 @@ function newAimal() {
       setTimeout(() => {
         resetCell(cellActive, "fly", "cat", "dead")
         newAimal()
-        gameState.showTime = Math.max(500, gameState.showTime - 100)
+        gameState.showTime = Math.max(800, gameState.showTime - 100)
       }, gameState.showTime);
 
     }, getRandomNumber(500, 1000));
@@ -138,7 +138,7 @@ function startGameAgain() {
     updateFlyCounter()
 
     gameState.isRunning = false
-    gameState.showTime = 1000
+    gameState.showTime = 1200
     gameState.timerTime = 20
 
     startTimer()
